@@ -1,0 +1,13 @@
+{
+  "name": "wijnspijs",
+  "version": "1.0.0",
+  "description": "App die wijn-spijs combinaties geeft: zoek op wijn voor bijpassende gerechten met recept, of op gerecht/ingrediënt/keuken voor de juiste wijn.",
+  "scripts": {
+    "start": "npx --yes serve -l 8000 .",
+    "dev": "python3 -m http.server 8000",
+    "test": "node test.js"
+  },
+  "keywords": ["wijn", "spijs", "food-pairing", "recepten", "wine"],
+  "license": "MIT",
+  "private": true
+}

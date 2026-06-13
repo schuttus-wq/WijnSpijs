@@ -27,12 +27,30 @@ je ook op ingrediënt of keuken kunt zoeken.
 
 ## Gebruiken
 
-Open simpelweg `index.html` in een browser. Of start een lokale server:
+**Direct openen:** dubbelklik op `index.html` — de app werkt volledig in de browser.
+
+**Lokaal serveren** (aanbevolen, bv. voor mobiel testen):
 
 ```bash
+npm start          # start op http://localhost:8000 (via 'serve')
+# of zonder npm:
 python3 -m http.server 8000
-# open http://localhost:8000
 ```
+
+**Live online:** bij elke push naar `main` zet de GitHub Actions-workflow
+(`.github/workflows/deploy.yml`) de app automatisch op **GitHub Pages**. Zorg
+dat in de repo onder *Settings → Pages* de bron op **GitHub Actions** staat; de
+workflow probeert dit ook zelf in te schakelen. De live-URL verschijnt na de
+deploy in de Actions-run.
+
+## Testen
+
+```bash
+npm test
+```
+
+Dit controleert de dataset-integriteit: unieke id's, geen wijn of gerecht
+zonder match, en geldige recepten.
 
 ## Bestanden
 
