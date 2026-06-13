@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WijnSpijs — wijn & spijs combinaties</title>
+  <meta name="description" content="Vind de perfecte wijn-spijs combinatie. Zoek op wijn en ontdek bijpassende gerechten met recept, of zoek op gerecht, ingrediënt of keuken." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍷</text></svg>" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>🍷 WijnSpijs</h1>
+      <p class="tagline">Vind de perfecte combinatie van wijn &amp; spijs</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="tabs" role="tablist">
+      <button class="tab active" id="tab-wine" role="tab" aria-selected="true">
+        Zoek op wijn
+      </button>
+      <button class="tab" id="tab-food" role="tab" aria-selected="false">
+        Zoek op gerecht / ingrediënt / keuken
+      </button>
+    </div>
+
+    <!-- Paneel: zoek op wijn -->
+    <section class="panel active" id="panel-wine" role="tabpanel">
+      <p class="panel-intro">
+        Kies een wijn en ontdek welke gerechten erbij passen — inclusief recept.
+      </p>
+      <label class="field">
+        <span class="field-label">Wijn</span>
+        <select id="wine-select">
+          <option value="">— Kies een wijn —</option>
+        </select>
+      </label>
+      <div class="chips" id="wine-quick"></div>
+      <div class="results" id="wine-results"></div>
+    </section>
+
+    <!-- Paneel: zoek op gerecht/ingrediënt/keuken -->
+    <section class="panel" id="panel-food" role="tabpanel" hidden>
+      <p class="panel-intro">
+        Typ een gerecht, ingrediënt of keuken en vind de bijpassende wijn.
+      </p>
+      <form class="field" id="food-form">
+        <span class="field-label">Gerecht, ingrediënt of keuken</span>
+        <div class="search-row">
+          <input
+            type="text"
+            id="food-input"
+            placeholder="bv. zalm, pittig, Italiaans, biefstuk…"
+            autocomplete="off"
+          />
+          <button type="submit" class="btn-primary">Zoek</button>
+        </div>
+      </form>
+      <div class="chips" id="food-quick"></div>
+      <div class="results" id="food-results"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>WijnSpijs — combineer met plezier. Geniet met mate. 18+</p>
+    </div>
+  </footer>
+
+  <!-- Recept-dialoog -->
+  <dialog id="recipe-dialog">
+    <button class="dialog-close" id="recipe-close" aria-label="Sluiten">×</button>
+    <div id="recipe-content"></div>
+  </dialog>
+
+  <script src="data.js"></script>
+  <script src="engine.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
